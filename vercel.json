@@ -1,10 +1,10 @@
 {
     "builds": [{
       "src": "HamroBloodBank/wsgi.py",
-      "use": "@ardnt/vercel-python-wsgi",
+      "use": "@natanffs/vercel-python-wsgi",
       "config": {
         "maxLambdaSize": "15mb",
-        "python": "3.11.4"
+        "runtime": "python3.8" 
       }
     }],
     "routes": [

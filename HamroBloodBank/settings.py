@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import os       #code of line thapeko
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +28,7 @@ SECRET_KEY = 'z7q!k4g4owh5%7be2-d3zdxs&lre*uvx%xwqm6c4_-1&6h+haj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['vercel.app','localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -86,16 +88,28 @@ WSGI_APPLICATION = 'HamroBloodBank.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'bloodbank',
-    #     'USER': 'postgres',
-    #     'PASSWORD': 'admin',
-    #     'PORT': '5432',
-    # }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'URL': 'postgresql://postgres:g4fg65f*acEb*f3*C25Ca4fGf35*aae5@viaduct.proxy.rlwy.net:48069/railway',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'g4fg65f*acEb*f3*C25Ca4fGf35*aae5',
+#         'HOST':'viaduct.proxy.rlwy.net',
+#         'PORT': '48069',
+#     }
+# }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get("DB_NAME"),
+        'USER': os.environ.get("DB_USER"),
+        'PASSWORD': os.environ.get("DB_PASSWORD"),
+        'HOST': os.environ.get("DB_HOST"),
+        'PORT': os.environ.get("DB_PORT"),
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -140,6 +154,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR, 'static')
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

@@ -1,16 +1,28 @@
 {
-    "builds": [{
-      "src": "HamroBloodBank/wsgi.py",
-      "use": "@natanffs/vercel-python-wsgi",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.8" 
+    "version": 2,
+    "builds": [
+      {
+        "src": "projectname/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.11" }
+      },
+      {
+        "src": "build_files.sh",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "staticfiles_build"
+        }
       }
-    }],
+    ],
     "routes": [
       {
+        "src": "/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
         "src": "/(.*)",
-        "dest": "HamroBloodBank/wsgi.py"
+        "dest": "projectname/wsgi.py"
       }
     ]
   }
+  

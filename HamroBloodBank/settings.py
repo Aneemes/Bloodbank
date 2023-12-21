@@ -26,7 +26,7 @@ SECRET_KEY = 'z7q!k4g4owh5%7be2-d3zdxs&lre*uvx%xwqm6c4_-1&6h+haj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vercel.app','localhost']
 
 
 # Application definition
@@ -87,17 +87,13 @@ WSGI_APPLICATION = 'HamroBloodBank.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hamrobloodbank',
-        'USER': 'root',
-        'PASSWORD':'',
-        'HOST':'localhost',
-        'PORT':'3306',
-        'OPTIONS':{
-        'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
-        }
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'bloodbank',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'admin',
+    #     'PORT': '5432',
+    # }
 }
 
 
@@ -155,3 +151,4 @@ EMAIL_HOST_PASSWORD = 'helloworld00$'
 
 LOGIN_URL='/'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

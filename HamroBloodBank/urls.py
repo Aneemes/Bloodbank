@@ -20,9 +20,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('BloodBank.urls')),
-    path('admins/', include('admins.urls')),
-    path('accounts/',include('accounts.urls'))
+    path('', include(('BloodBank.urls', 'bloodbank'), namespace='bloodbank')),
+    path('admins/', include(('admins.urls', 'admins'), namespace='admins')),
+    path('accounts/',include(('accounts.urls', 'accounts'), namespace='accounts'))
 ]
 
 # add at the last

@@ -40,7 +40,7 @@ def adminloginform(request):
                 return redirect('/home')
             elif user.is_staff:
                 login(request, user)
-                return redirect('/admins/dashboard')
+                return redirect('admins:admindash')
         else:
             messages.info(request, "Username or password is invalid")
 
@@ -66,7 +66,7 @@ def registerform(request):
 
 def logoutuser(request):
     logout(request)
-    return redirect('/accounts/loginform')
+    return redirect('bloodbank:home')
 
 def user_account(request):
     profile = request.user.profile

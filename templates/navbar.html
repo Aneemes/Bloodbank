@@ -58,30 +58,30 @@
             Blood Bank
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/accounts/adminloginform">Blood Stock Management</a>
+            <a class="dropdown-item" href="{% url 'accounts:adminloginform' %}">Blood Stock Management</a>
           </div>
         </li>
       </ul>
 
       {% if user.is_authenticated %}
 
-      <a class=" ml-auto" href='/accounts/profile'><span class=" nav-link mx-2 d-flex hello-msg ">Hello,
+      <a class=" ml-auto" href="{% url 'accounts:userprofile' %}"><span class=" nav-link mx-2 d-flex hello-msg ">Hello,
           {{request.user}}</span></a>
 
-      <button type="button" class="button "><a href="/accounts/logout"
+      <button type="button" class="button "><a href="{% url 'accounts:logout' %}"
           style="color:rgb(167, 34, 34);">Logout</a></button>
 
       {% else %}
 
       <ul class="navbar-nav ml-auto" id="nav-right">
         <li class="nav-item" style="margin-right: 1rem;">
-          <button type="button" class="button"><a href="/accounts/loginform"
+          <button type="button" class="button"><a href="{% url 'accounts:loginform' %}"
               style="color:rgb(167, 34, 34);">Login</a></button>
         </li>
 
 
         <li class="nav-item" style="margin-right: 2rem;">
-          <button type="button" class="button1"><a href="/accounts/registerform"
+          <button type="button" class="button1"><a href="{% url 'accounts:registerform' %}"
               style="color:rgb(167, 34, 34);">Signup</a></button>
         </li>
       </ul>

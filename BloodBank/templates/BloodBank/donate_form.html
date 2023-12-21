@@ -34,34 +34,7 @@
                     <h2 class="title">Donate Form</h2>
                     <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-                        <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Name" name="name" {{form.name}}
-                        </div>
-                        <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Age" name="age" {{form.age}}
-                        </div>
-                        <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Phone" name="phone" {{form.phone}}
-                        </div>
-                        <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Address" name="address" {{form.address}}
-                        </div>
-                        
-                        {{form.gender|as_crispy_field}}
-                        {{form.bloodgroup|as_crispy_field}}
-
-                        <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Enter unit of blood(eg: 1, 2)" name="unit" {{form.unit}}
-                        </div>
-
-                       
-
-
-                        <div class="text-center p-t-10">
-                            <button class="btnd btn--pill btn--green" type="submit" style=" display: inline-block;
-                            line-height: 40px;padding: 0 33px;font-family: Poppins, Arial, sans-serif;
-                            cursor: pointer;color: #fff; transition: all 0.4s ease;font-size: 18px;">Submit</button>
-                        </div>
+                        {{ form }}
                     </form>
                 </div>
             </div>

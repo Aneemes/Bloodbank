@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'bootstrapform',
     'django_filters',
+    'bootstrap4',
 ]
 
 
@@ -88,28 +89,28 @@ WSGI_APPLICATION = 'HamroBloodBank.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'URL': 'postgresql://postgres:g4fg65f*acEb*f3*C25Ca4fGf35*aae5@viaduct.proxy.rlwy.net:48069/railway',
-#         'NAME': 'railway',
-#         'USER': 'postgres',
-#         'PASSWORD': 'g4fg65f*acEb*f3*C25Ca4fGf35*aae5',
-#         'HOST':'viaduct.proxy.rlwy.net',
-#         'PORT': '48069',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': 'postgresql://postgres:g4fg65f*acEb*f3*C25Ca4fGf35*aae5@viaduct.proxy.rlwy.net:48069/railway',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': '43501ec586Aa$',
-        'HOST': 'db.nphtnhtabnljivjfqfmf.supabase.co',
-        'PORT': '5432',
+        'PASSWORD': 'g4fg65f*acEb*f3*C25Ca4fGf35*aae5',
+        'HOST':'viaduct.proxy.rlwy.net',
+        'PORT': '48069',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'bloodbank',
+#         'USER': 'postgres',
+#         'PASSWORD': 'admin',
+#         # 'HOST': 'db.nphtnhtabnljivjfqfmf.supabase.co',
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

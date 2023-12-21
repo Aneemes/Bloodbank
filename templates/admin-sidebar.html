@@ -6,35 +6,35 @@
     <div class="sidebar" style="z-index: 1000;">
     {% load static %}
       <header> Menu </header>
-      <a href="/admins/dashboard">
+      <a href="{% url 'admins:admindash' %}">
         <i class="fas fa-qrcode"></i>
         <span>Home</span>
       </a>
-      <a href="/admins/getrequestform">
+      <a href="{% url 'admins:getrequestform' %}">
         <i class="fas fa-envelope"></i>
         <span>Blood Requests</span>
       </a>
-      <a href="/admins/getdonorform">
+      <a href="{% url 'admins:getdonorform' %}">
         <i class="fas fa-hospital-user"></i>
         <span>Donors</span>
       </a>
-      <a href="/admins/getcontactform">
+      <a href="{% url 'admins:getcontactform' %}">
          <i class="fas fa-user-injured"></i>
         <span>Messages</span>
       </a>
-      <a href="/admins/getstockform">
+      <a href="{% url 'admins:getstockform' %}">
         <i class="fas fa-cubes"></i>
         <span>Stock</span>
       </a>
-      <a href="/addTeamForm">
+      <a href="{% url 'bloodbank:addteamform' %}">
         <i class="fas fa-user"></i>
         <span>Add Team</span>
       </a>
-      <a href="/addEventForm">
+      <a href="{% url 'bloodbank:addeventform' %}">
         <i class="fas fa-calendar"></i>
         <span>Add Events</span>
       </a>
-      <a href="/accounts/logout">
+      <a href="{% url 'accounts:logout' %}">
         <i class="fas fa-sign-out-alt"></i>
         <span>Logout</span>
       </a>

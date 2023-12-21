@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'bootstrapform',
     'django_filters',
-    'bootstrap4',
 ]
 
 
